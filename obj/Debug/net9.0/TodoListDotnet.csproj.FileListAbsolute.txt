@@ -12,3 +12,4 @@ D:\Study\C#\TodoListDotnet\obj\Debug\net9.0\refint\TodoListDotnet.dll
 D:\Study\C#\TodoListDotnet\obj\Debug\net9.0\TodoListDotnet.pdb
 D:\Study\C#\TodoListDotnet\obj\Debug\net9.0\TodoListDotnet.genruntimeconfig.cache
 D:\Study\C#\TodoListDotnet\obj\Debug\net9.0\ref\TodoListDotnet.dll
+D:\Study\C#\TodoListDotnet\obj\Debug\net9.0\TodoListDotnet.sourcelink.json
