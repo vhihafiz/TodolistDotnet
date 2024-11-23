@@ -1,0 +1,14 @@
+D:\Study\C#\TodoListDotnet\bin\Debug\net9.0\TodoListDotnet.exe
+D:\Study\C#\TodoListDotnet\bin\Debug\net9.0\TodoListDotnet.deps.json
+D:\Study\C#\TodoListDotnet\bin\Debug\net9.0\TodoListDotnet.runtimeconfig.json
+D:\Study\C#\TodoListDotnet\bin\Debug\net9.0\TodoListDotnet.dll
+D:\Study\C#\TodoListDotnet\bin\Debug\net9.0\TodoListDotnet.pdb
+D:\Study\C#\TodoListDotnet\obj\Debug\net9.0\TodoListDotnet.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\C#\TodoListDotnet\obj\Debug\net9.0\TodoListDotnet.AssemblyInfoInputs.cache
+D:\Study\C#\TodoListDotnet\obj\Debug\net9.0\TodoListDotnet.AssemblyInfo.cs
+D:\Study\C#\TodoListDotnet\obj\Debug\net9.0\TodoListDotnet.csproj.CoreCompileInputs.cache
+D:\Study\C#\TodoListDotnet\obj\Debug\net9.0\TodoListDotnet.dll
+D:\Study\C#\TodoListDotnet\obj\Debug\net9.0\refint\TodoListDotnet.dll
+D:\Study\C#\TodoListDotnet\obj\Debug\net9.0\TodoListDotnet.pdb
+D:\Study\C#\TodoListDotnet\obj\Debug\net9.0\TodoListDotnet.genruntimeconfig.cache
+D:\Study\C#\TodoListDotnet\obj\Debug\net9.0\ref\TodoListDotnet.dll
