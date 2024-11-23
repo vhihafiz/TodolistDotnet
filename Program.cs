@@ -8,7 +8,10 @@
             AddTodo(i.ToString());
         }
 
-        DeleteTodo(2);
+        // DeleteTodo(2);
+        GetAllTodo();
+        Console.WriteLine("PEMISAH");
+        UpdateTodo(11, "DUA");
         GetAllTodo();
 
 
@@ -102,6 +105,37 @@
                     todos[i] = temp;
                 }
             }
+        }
+    }
+
+    static void UpdateTodo(int id, string newTodo)
+    {
+        if (todos[0] == null)
+        {
+            Console.WriteLine("Theres no todo to be update");
+        }
+        else if (id <= 0)
+        {
+            Console.WriteLine("Cannot update Todo!, Minimum id is 1");
+        }
+        else if (id > todos.Length)
+        {
+            Console.WriteLine("Cannot update Todo!, Id is out of length");
+        }
+        else if (todos[(id - 1)] == null)
+        {
+            for (int i = 0; i < todos.Length; i++)
+            {
+                if (todos[i] == null)
+                {
+                    Console.WriteLine("Cannot update todo id: " + id + "!, Todo only untill id: " + i);
+                    break;
+                }
+            }
+        }
+        else
+        {
+            todos[id - 1] = newTodo;
         }
     }
 
