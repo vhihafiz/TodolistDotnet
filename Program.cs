@@ -1,18 +1,12 @@
 ﻿using System.Data;
+using Microsoft.VisualBasic;
 
 class Program
 {
     static string[] todos = new String[10];
     static void Main(string[] args)
     {
-        // MenuAddTodo();
-        AddTodo("Coba");
-        AddTodo("Coba");
-        AddTodo("Lagi");
-        MenuDeleteTodo();
-        GetAllTodo();
-
-
+        MenuApp();
     }
 
     static void MenuApp()
@@ -26,11 +20,14 @@ class Program
             Console.WriteLine("2. Get All Todo");
             Console.WriteLine("3. Update Todo");
             Console.WriteLine("4. Delete Todo");
-            Console.WriteLine("4. Delete Todo");
             Console.WriteLine("X. Exit APP");
 
             Console.Write("Choice: ");
             string userChoice = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(userChoice)) {
+                Console.WriteLine("Please Type a Valid Menu");
+            }
 
             switch (userChoice)
             {
@@ -44,16 +41,13 @@ class Program
                     MenuUpdateTodo();
                     break;
                 case "4":
-                    
+                    MenuDeleteTodo();
                     break;
                 case "x":
                     isStart = false;
                     break;
                 case "X":
                     isStart = false;
-                    break;
-                default:
-                    Console.WriteLine("Please Type a Valid Menu!");
                     break;
             }
 
