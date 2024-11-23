@@ -3,21 +3,85 @@
     static string[] todos = new String[10];
     static void Main(string[] args)
     {
-        for (int i = 1; i <= 3; i++)
-        {
-            AddTodo(i.ToString());
-        }
-
-        // DeleteTodo(2);
-        GetAllTodo();
-        Console.WriteLine("PEMISAH");
-        UpdateTodo(11, "DUA");
-        GetAllTodo();
-
-
+        MenuAddTodo();
 
 
     }
+
+    static void MenuApp()
+    {
+        bool isStart = true;
+
+        while (isStart)
+        {
+            Console.WriteLine("Todo App Monolith with Dotnet");
+            Console.WriteLine("1. Add Todo");
+            Console.WriteLine("2. Get All Todo");
+            Console.WriteLine("3. Update Todo");
+            Console.WriteLine("4. Delete Todo");
+            Console.WriteLine("4. Delete Todo");
+            Console.WriteLine("X. Exit APP");
+
+            Console.Write("Choice: ");
+            string userChoice = Console.ReadLine();
+
+            switch (userChoice)
+            {
+                case "1":
+                    MenuAddTodo();
+                    break;
+                case "2":
+                    GetAllTodo();
+                    break;
+                case "3":
+                    break;
+                case "4":
+                    break;
+                case "x":
+                isStart = false;
+                    break;
+                case "X":
+                isStart = false;
+                    break;
+                default:
+                    Console.WriteLine("Please Type a Valid Menu!");
+                    break;
+            }
+
+        }
+    }
+
+    static void MenuAddTodo()
+    {
+
+        bool isValidInput = false;
+
+        while (!isValidInput)
+        {
+            Console.WriteLine("Menu Add Todo");
+            Console.WriteLine("-----------------------");
+            Console.WriteLine("Type x or X for CANCEL");
+            Console.Write("Add Todo: ");
+            string input = Console.ReadLine();
+
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                AddTodo(input);
+                isValidInput = true;
+            }
+            else if (input.Equals("x") || input.Equals("X"))
+            {
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Cannot NULL or Whitespace! Please input valid todo");
+            }
+
+        }
+
+    }
+
 
     static void AddTodo(string todo)
     {
@@ -56,6 +120,7 @@
 
     static void GetAllTodo()
     {
+        Console.WriteLine("------ Todolist ------");
         for (int i = 0; i < todos.Length; i++)
         {
             if (todos[i] != null)
