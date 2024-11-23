@@ -1,9 +1,16 @@
-﻿class Program
+﻿using System.Data;
+
+class Program
 {
     static string[] todos = new String[10];
     static void Main(string[] args)
     {
-        MenuAddTodo();
+        // MenuAddTodo();
+        AddTodo("Coba");
+        AddTodo("Coba");
+        AddTodo("Lagi");
+        MenuDeleteTodo();
+        GetAllTodo();
 
 
     }
@@ -34,14 +41,16 @@
                     GetAllTodo();
                     break;
                 case "3":
+                    MenuUpdateTodo();
                     break;
                 case "4":
+                    
                     break;
                 case "x":
-                isStart = false;
+                    isStart = false;
                     break;
                 case "X":
-                isStart = false;
+                    isStart = false;
                     break;
                 default:
                     Console.WriteLine("Please Type a Valid Menu!");
@@ -79,9 +88,92 @@
             }
 
         }
-
     }
 
+    static void MenuUpdateTodo()
+    {
+        GetAllTodo();
+        bool isValidInputId = false;
+        bool isValidInputTodo = false;
+        string id = "";
+        int todoId;
+
+        while (!isValidInputId)
+        {
+            Console.WriteLine("Menu Add Todo");
+            Console.WriteLine("-----------------------");
+            Console.WriteLine("Type x or X for CANCEL");
+            Console.Write("Todo Id: ");
+            id = Console.ReadLine();
+
+            if (!string.IsNullOrWhiteSpace(id) && !id.Equals("X") && !id.Equals("x"))
+            {
+                isValidInputId = true;
+            }
+            else if (id.Equals("x") || id.Equals("X"))
+            {
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Cannot NULL or Whitespace! Please input valid todo");
+            }
+        }
+
+        while (!isValidInputTodo)
+        {
+            Console.Write("New Todo: ");
+            string newTodo = Console.ReadLine();
+
+            if (!string.IsNullOrWhiteSpace(newTodo) && !newTodo.Equals("X") && !newTodo.Equals("x"))
+            {
+                todoId = int.Parse(id);
+                UpdateTodo(todoId, newTodo);
+                isValidInputTodo = true;
+            }
+            else if (newTodo.Equals("x") || newTodo.Equals("X"))
+            {
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Cannot NULL or Whitespace! Please input valid todo");
+            }
+        }
+    }
+
+
+    static void MenuDeleteTodo()
+    {
+        GetAllTodo();
+        bool isValidInput = false;
+        
+
+        while (!isValidInput)
+        {
+            Console.WriteLine("Menu Add Todo");
+            Console.WriteLine("-----------------------");
+            Console.WriteLine("Type x or X for CANCEL");
+            Console.Write("Deleted Id: ");
+            string input = Console.ReadLine();
+
+            if (!string.IsNullOrWhiteSpace(input) && !input.Equals("X") && !input.Equals("x"))
+            {
+                int id = int.Parse(input);
+                DeleteTodo(id);
+                isValidInput = true;
+            }
+            else if (input.Equals("x") || input.Equals("X"))
+            {
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Cannot NULL or Whitespace! Please input valid todo");
+            }
+
+        }
+    }
 
     static void AddTodo(string todo)
     {
@@ -157,6 +249,7 @@
         }
         else
         {
+            Console.WriteLine("Success delete id: " + id + "todo: " + todos[id - 1]);
             for (int i = (id - 1); i < todos.Length; i++)
             {
                 if (i == todos.Length - 1)
@@ -200,7 +293,9 @@
         }
         else
         {
+            Console.Write("Success update id: " + id + ", from todo: " + todos[id - 1]);
             todos[id - 1] = newTodo;
+            Console.Write(" to todo: " + todos[id - 1] + "\n");
         }
     }
 
